@@ -10,7 +10,7 @@ public class BestFit {
 
 		// Cria um vetor para guardar o espaço restante nos pacotes
 		// Pode haver no máximo N pacotes.
-		int pacotesRestante[] = new int[n];
+		int pacotesRestantes[] = new int[n];
 
 		// Empacota 1 a 1
 		for (int i = 0; i < n; i++) {
@@ -23,19 +23,20 @@ public class BestFit {
 			int min = c + 1, bi = 0;
 
 			for (j = 0; j < resultado; j++) {
-				if (pacotesRestante[j] >= peso[i] && pacotesRestante[j] - peso[i] < min) {
+				if (pacotesRestantes[j] >= peso[i] && pacotesRestantes[j] - peso[i] < min) {
 					bi = j;
-					min = pacotesRestante[j] - peso[i];
+					min = pacotesRestantes[j] - peso[i];
 				}
 			}
 
 			// Se nenhum pacote acomoda peso[i],
 			// então cria-se um novo pacote.
 			if (min == c + 1) {
-				pacotesRestante[resultado] = c - peso[i];
+				pacotesRestantes[resultado] = c - peso[i];
 				resultado++;
 			} else // escolhe o melhor pacote para um item.
-				pacotesRestante[bi] -= peso[i];
+				pacotesRestantes[bi] -= peso[i];
+			System.out.println("\nPacote: "+resultado+" Item: "+(i+1)+" Tamanho : "+peso[i]+"\nEspaço restante :" + pacotesRestantes[j]);
 		}
 		return resultado;
 	}
@@ -44,6 +45,6 @@ public class BestFit {
 		int peso[] = { 2, 5, 4, 7, 1, 3, 8 };
 		int c = 10;
 		int n = peso.length;
-		System.out.println("Numero de pacotes necessários em Best Fit : " + bestFit(peso, n, c));
+		System.out.println("\nNumero de pacotes necessários em Best Fit : " + bestFit(peso, n, c));
 	}
 }

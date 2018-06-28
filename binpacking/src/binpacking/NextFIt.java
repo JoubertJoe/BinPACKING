@@ -16,6 +16,7 @@ public class NextFIt {
 				pacotesRestantes = c - peso[i];
 			} else
 				pacotesRestantes -= peso[i];
+			System.out.println("\nPacote: "+resultado+" Item: "+(i+1)+" Tamanho : "+peso[i]+"\nEspaço restante :" + pacotesRestantes);
 		}
 		return resultado;
 	}
