@@ -3,7 +3,7 @@ package binpacking;
 public class NextFIt {
 
 	// Algoritmo NEXT FIT que retorna o número de pacotes necessários.
-	static int nextFit(int peso[], int n, int c) {
+	public static int nextFit(int peso[], int n, int c) {
 		// Iniciliza o resultado (contagem de pacotes) e a capacidade restante de
 		// pacotes.
 		int resultado = 1, pacotesRestantes = c;
@@ -21,12 +21,6 @@ public class NextFIt {
 		return resultado;
 	}
 
-	public static void main(String[] args) { 
-
-		int peso[] = { 2, 5, 4, 7, 1, 3, 8 };
-		int c = 10;
-		int n = peso.length;
-		System.out.println("Numero de pacotes necessários em Next Fit : " + nextFit(peso, n, c));
-	}
+	
 
 }

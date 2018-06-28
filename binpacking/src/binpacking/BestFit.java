@@ -4,7 +4,7 @@ public class BestFit {
 
 	// Retorna o numero de pacotes necessario pelo método bestfit
 	// online algorithm
-	static int bestFit(int peso[], int n, int c) {
+	public static int bestFit(int peso[], int n, int c) {
 		// Inicializa o resultado (Contagem de pacotes)
 		int resultado = 0;
 
@@ -40,11 +40,5 @@ public class BestFit {
 		}
 		return resultado;
 	}
-	public static void main(String[] args) {
-
-		int peso[] = { 2, 5, 4, 7, 1, 3, 8 };
-		int c = 10;
-		int n = peso.length;
-		System.out.println("\nNumero de pacotes necessários em Best Fit : " + bestFit(peso, n, c));
-	}
+	
 }
