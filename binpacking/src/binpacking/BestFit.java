@@ -5,6 +5,7 @@ public class BestFit {
 	// Retorna o numero de pacotes necessario pelo método bestfit
 	// online algorithm
 	public static int bestFit(int peso[], int n, int c) {
+
 		// Inicializa o resultado (Contagem de pacotes)
 		int resultado = 0;
 
@@ -14,6 +15,7 @@ public class BestFit {
 
 		// Empacota 1 a 1
 		for (int i = 0; i < n; i++) {
+
 			// Acha o melhor pacote a ser empacotado
 			// peso[i]
 			int j;
@@ -26,19 +28,21 @@ public class BestFit {
 				if (pacotesRestantes[j] >= peso[i] && pacotesRestantes[j] - peso[i] < min) {
 					bi = j;
 					min = pacotesRestantes[j] - peso[i];
+					System.out.println("\nPacote: " + (resultado) + " Item : " + peso[i]);
 				}
 			}
 
 			// Se nenhum pacote acomoda peso[i],
 			// então cria-se um novo pacote.
 			if (min == c + 1) {
+				
 				pacotesRestantes[resultado] = c - peso[i];
 				resultado++;
+				System.out.println("\nPacote: " + resultado + " Item: " + peso[i]);
 			} else // escolhe o melhor pacote para um item.
 				pacotesRestantes[bi] -= peso[i];
-			System.out.println("\nPacote: "+resultado+" Item: "+(i+1)+" Tamanho : "+peso[i]+"\nEspaço restante :" + pacotesRestantes[j]);
 		}
 		return resultado;
 	}
-	
+
 }

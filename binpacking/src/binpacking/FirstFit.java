@@ -16,8 +16,8 @@ public class FirstFit {
 			for (j = 0; j < resultado; j++) {
 				if (pacotesRestantes[j] >= peso[i]) {
 					pacotesRestantes[j] = pacotesRestantes[j] - peso[i];
-					System.out.println("\nPacote: " + (resultado + 1) + " Item: " + (i + 1) + " Tamanho : " + peso[i]
-							+ "\nEspaço restante :" + pacotesRestantes[j]);
+					System.out.println("\nPacote: " + (j+1) + " Item: " + peso[i]
+							);
 					break;
 				}
 			}
@@ -26,8 +26,8 @@ public class FirstFit {
 			if (j == resultado) {
 				pacotesRestantes[resultado] = c - peso[i];
 				resultado++;
-				System.out.println("\nPacote: " + resultado + " Item: " + (i + 1) + " Tamanho : " + peso[i]
-						+ "\nEspaço restante :" + pacotesRestantes[j]);
+				System.out.println("\nPacote: " + (j+1) + " Item: " + peso[i]
+						);
 			}
 		}
 		return resultado;

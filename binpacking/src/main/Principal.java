@@ -30,8 +30,8 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		List<Integer> entradaBrute = Arrays.asList(2, 5, 4, 7, 1, 3, 8);
-		int peso[] = { 2, 5, 4, 7, 1, 3, 8 };
+		List<Integer> entradaBrute = Arrays.asList(4,3,5,1,2);
+		int peso[] = {4,3,5,1,2};
 		int c = 10;
 		long T1 = System.currentTimeMillis();
 		BruteForce bf = new BruteForce(entradaBrute, c);
